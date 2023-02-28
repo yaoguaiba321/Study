@@ -6,12 +6,12 @@
     <packaging>war</packaging>
     <version>0.0.1-SNAPSHOT</version>
     <name>Study Maven Webapp</name>
-    <url>http://maven.apache.org</url>
+    <url>https://maven.apache.org</url>
 
     <properties>
         <!-- 各依赖的版本 -->
         <junit.version>3.8.1</junit.version>
-        <lombok.version>1.18.2</lombok.version>
+        <lombok.version>1.18.20</lombok.version>
         <jetty.version>9.4.12.v20180830</jetty.version>
         <spring.version>5.0.9.RELEASE</spring.version>
         <javaLib.version>1.0.4.RELEASE</javaLib.version>
@@ -99,6 +99,7 @@
             <artifactId>spring-web</artifactId>
             <version>${spring.version}</version>
         </dependency>
+
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-webmvc</artifactId>
@@ -122,6 +123,26 @@
             <groupId>com.alibaba</groupId>
             <artifactId>fastjson</artifactId>
             <version>1.2.78</version>
+        </dependency>
+
+        <!-- lombok-->
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>${lombok.version}</version>
+            <scope>provided</scope>
+        </dependency>
+
+        <!-- Hibernate依赖 -->
+        <dependency>
+            <groupId>org.hibernate</groupId>
+            <artifactId>hibernate-validator</artifactId>
+            <version>6.1.0.Final</version>
+        </dependency>
+        <dependency>
+            <groupId>org.hibernate</groupId>
+            <artifactId>hibernate-validator-cdi</artifactId>
+            <version>6.1.0.Final</version>
         </dependency>
     </dependencies>
     <build>

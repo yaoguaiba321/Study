@@ -28,7 +28,7 @@
        <mvc:default-servlet-handler />
        
        <!-- 设置相关Bean代码的位置 -->
-       <context:component-scan base-package="controller" />
+       <context:component-scan base-package="controllers" />
        
        
        <!-- 配置视图解析器 -->

@@ -1,6 +1,5 @@
-package controller;
+package controllers;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.alibaba.fastjson.JSONObject;
 
@@ -25,7 +24,7 @@ public class Control{
 	
 	@GetMapping("/")
 	public String index() {
-		System.out.println("·þÎñÆ÷Æô¶¯");
+		System.out.println("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½");
 		return "index";
 	}
 	
@@ -33,11 +32,11 @@ public class Control{
 	public void post(HttpServletRequest request,HttpServletResponse response,Model model) throws IOException{
 		String a=request.getParameter("a");
 		String b=request.getParameter("b");
-		System.out.println("¿Í»§¶Ë´«µÝ¹ýÀ´:"+a+","+b);
+		System.out.println("ï¿½Í»ï¿½ï¿½Ë´ï¿½ï¿½Ý¹ï¿½ï¿½ï¿½:"+a+","+b);
 		
 		response.setContentType("text/html;charset=utf-8");
 		PrintWriter out = response.getWriter();
-		out.write("³É¹¦");
+		out.write("ï¿½É¹ï¿½");
 		out.flush();
 		out.close();
 		
@@ -55,42 +54,35 @@ public class Control{
 		out.close();
 		
 	}
-	//×¢²áÄ£¿é
+	//×¢ï¿½ï¿½Ä£ï¿½ï¿½
 	@RequestMapping("/register")
 	public void register(HttpServletRequest request,HttpServletResponse response) throws IOException{
 		
 		
 	}
 	
-	//µÇÂ¼Ä£¿é //»¹ÐèÒªÉèÖÃ²»ÄÜÍ¬Ê±µÇÂ¼Á½Ì¨Éè±¸²ÅÊÇ£¬Ò²¾ÍÊÇ¼ÇÂ¼Ò»¸ö×Ö¶Î£¬
-	@RequestMapping("/login")
-	public void login(HttpServletRequest request,HttpServletResponse response) throws IOException{
-		
-		
-	}
-	
-	//ÐÞ¸ÄÄ£¿é
+	//ï¿½Þ¸ï¿½Ä£ï¿½ï¿½
 	@RequestMapping("/change")
 	public void change(HttpServletRequest request,HttpServletResponse response) throws IOException{
 		
 		
 	}
 	
-	//Ë÷È¡ÓÃ»§ÐÅÏ¢²¿·Ö
+	//ï¿½ï¿½È¡ï¿½Ã»ï¿½ï¿½ï¿½Ï¢ï¿½ï¿½ï¿½ï¿½
 	@RequestMapping("/getUserInfo")
 	public void getUserInfo(HttpServletRequest request,HttpServletResponse response) throws IOException{
 		
 		
 	}
 	
-	//¿Í»§¶Ë´«À´Í·Ïñ
+	//ï¿½Í»ï¿½ï¿½Ë´ï¿½ï¿½ï¿½Í·ï¿½ï¿½
 	@RequestMapping("/getUserPortrait")
 	public void getUserPortrait(HttpServletRequest request,HttpServletResponse response) throws IOException{
 		
 		
 	}
 	
-	//¿Í»§¶ËË÷È¡Í·Ïñ
+	//ï¿½Í»ï¿½ï¿½ï¿½ï¿½ï¿½È¡Í·ï¿½ï¿½
 	@RequestMapping("/GiveUserPortrait")
 	public void giveUserPortrait(HttpServletRequest request,HttpServletResponse response) throws IOException{
 		
@@ -98,196 +90,196 @@ public class Control{
 	}
 	
 	
-	//ÓÃ»§´«À´Ñ§Ï°ÏîÄ¿ÐÅÏ¢²¿·Ö£¬ÐèÒªÌí¼ÓÒ»¸öÑ§Ï°ÏîÄ¿
+	//ï¿½Ã»ï¿½ï¿½ï¿½ï¿½ï¿½Ñ§Ï°ï¿½ï¿½Ä¿ï¿½ï¿½Ï¢ï¿½ï¿½ï¿½Ö£ï¿½ï¿½ï¿½Òªï¿½ï¿½ï¿½Ò»ï¿½ï¿½Ñ§Ï°ï¿½ï¿½Ä¿
 	@RequestMapping("/setLearnItem")
 	public void setLearnItem(HttpServletRequest request,HttpServletResponse response) throws IOException{
 		
 		
 	}
 	
-	//ÓÃ»§Ë÷È¡ËùÓÐÑ§Ï°ÏîÄ¿µÄ±êÌâºÍ½ñÌìÊÇ·ñÑ§Ï°¹ýµÄÐÅÏ¢
+	//ï¿½Ã»ï¿½ï¿½ï¿½È¡ï¿½ï¿½ï¿½ï¿½Ñ§Ï°ï¿½ï¿½Ä¿ï¿½Ä±ï¿½ï¿½ï¿½Í½ï¿½ï¿½ï¿½ï¿½Ç·ï¿½Ñ§Ï°ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ï¢
 	@RequestMapping("/getAllItemTitles")
 	public void getAllItemTitles(HttpServletRequest request,HttpServletResponse response) throws IOException{
 		
 		
 	}
 	
-	//ÓÃ»§Ë÷È¡Ä³¸öÑ§Ï°ÏîÄ¿ÐÅÏ¢
+	//ï¿½Ã»ï¿½ï¿½ï¿½È¡Ä³ï¿½ï¿½Ñ§Ï°ï¿½ï¿½Ä¿ï¿½ï¿½Ï¢
 	@RequestMapping("/giveSingleItemInfo")
 	public void giveSingleItemInfo(HttpServletRequest request,HttpServletResponse response) throws IOException{
 		
 		
 	}
 	
-	//ÓÃ»§ÉèÖÃÑ§Ï°´ÎÊý»òÕßÁ·Ï°´ÎÊý
+	//ï¿½Ã»ï¿½ï¿½ï¿½ï¿½ï¿½Ñ§Ï°ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ï°ï¿½ï¿½ï¿½ï¿½
 	@RequestMapping("/setLearnOrPracticeRecord")
 	public void setLearnOrPracticeRecord(HttpServletRequest request,HttpServletResponse response) throws IOException{
 		
 		
 	}
 	
-	//ÓÃ»§Ë÷È¡ÏêÏ¸Ñ§Ï°¼ÇÂ¼ÐÅÏ¢
+	//ï¿½Ã»ï¿½ï¿½ï¿½È¡ï¿½ï¿½Ï¸Ñ§Ï°ï¿½ï¿½Â¼ï¿½ï¿½Ï¢
 	@RequestMapping("/getDetailInfo")
 	public void getDetailInfo(HttpServletRequest request,HttpServletResponse response) throws IOException{
 		
 		
 	}
 	
-	//ÓÃ»§µã´íÁË£¬Òª»ØÍËµ½ÉÏÒ»´ÎµÄÐÅÏ¢
+	//ï¿½Ã»ï¿½ï¿½ï¿½ï¿½ï¿½Ë£ï¿½Òªï¿½ï¿½ï¿½Ëµï¿½ï¿½ï¿½Ò»ï¿½Îµï¿½ï¿½ï¿½Ï¢
 	@RequestMapping("/deleteLastDetailInfo")
 	public void deleteLastDetailInfo(HttpServletRequest request,HttpServletResponse response) throws IOException{
 		
 		
 	}
 	
-	//ÓÃ»§Ë÷È¡µ¥¸öÑ§Ï°ÏîÄ¿ÀúÊ·¼ÇÂ¼
+	//ï¿½Ã»ï¿½ï¿½ï¿½È¡ï¿½ï¿½ï¿½ï¿½Ñ§Ï°ï¿½ï¿½Ä¿ï¿½ï¿½Ê·ï¿½ï¿½Â¼
 	@RequestMapping("/singleItemRecordInfo")
 	public void singleItemRecordInfo(HttpServletRequest request,HttpServletResponse response) throws IOException{
 		
 		
 	}
 	
-	//ÓÃ»§Ë÷È¡²Ø±¦¸óÖÐµÄÏîÄ¿ÐÅÏ¢
+	//ï¿½Ã»ï¿½ï¿½ï¿½È¡ï¿½Ø±ï¿½ï¿½ï¿½ï¿½Ðµï¿½ï¿½ï¿½Ä¿ï¿½ï¿½Ï¢
 	@RequestMapping("/getcompleteiteminfo")
 	public void getcompleteiteminfo(HttpServletRequest request,HttpServletResponse response) throws IOException{
 		
 		
 	}
 	
-	//ÓÃ»§Ë÷È¡²Ø±¦¸óÖÐµÄÏîÄ¿µÄÏêÏ¸ÐÅÏ¢
+	//ï¿½Ã»ï¿½ï¿½ï¿½È¡ï¿½Ø±ï¿½ï¿½ï¿½ï¿½Ðµï¿½ï¿½ï¿½Ä¿ï¿½ï¿½ï¿½ï¿½Ï¸ï¿½ï¿½Ï¢
 	@RequestMapping("/gettreasuredetailinfo")
 	public void gettreasuredetailinfo(HttpServletRequest request,HttpServletResponse response) throws IOException{
 		
 		
 	}
 	
-	//ÓÃ»§Ìí¼Ó¿Î±í
+	//ï¿½Ã»ï¿½ï¿½ï¿½Ó¿Î±ï¿½
 	@RequestMapping("/addclasstable")
 	public void addclasstable(HttpServletRequest request,HttpServletResponse response) throws IOException{
 		
 		
 	}
 	
-	//ÓÃ»§Ë÷È¡¿Î±íÊý¾Ý
+	//ï¿½Ã»ï¿½ï¿½ï¿½È¡ï¿½Î±ï¿½ï¿½ï¿½ï¿½ï¿½
 	@RequestMapping("/getclasstabledata")
 	public void getclasstabledata(HttpServletRequest request,HttpServletResponse response) throws IOException{
 		
 		
 	}
 	
-	//ÓÃ»§Ë÷È¡ÈÕ¼ÇÊý¾Ý
+	//ï¿½Ã»ï¿½ï¿½ï¿½È¡ï¿½Õ¼ï¿½ï¿½ï¿½ï¿½ï¿½
 	@RequestMapping("/getdiary")
 	public void getdiary(HttpServletRequest request,HttpServletResponse response) throws IOException{
 		
 		
 	}
 	
-	//ÓÃ»§±£´æÈÕ¼ÇÊý¾Ý
+	//ï¿½Ã»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Õ¼ï¿½ï¿½ï¿½ï¿½ï¿½
 	@RequestMapping("/savediary")
 	public void savediary(HttpServletRequest request,HttpServletResponse response) throws IOException{
 		
 		
 	}
 	
-	//staticshowÒ³ÃæË÷È¡ÐÅÏ¢
+	//staticshowÒ³ï¿½ï¿½ï¿½ï¿½È¡ï¿½ï¿½Ï¢
 	@RequestMapping("/recordInfo")
 	public void recordInfo(HttpServletRequest request,HttpServletResponse response) throws IOException{
 		
 		
 	}
 	
-	//ÓÃ»§ÇëÇóÉ¾³ýÄ³¸öÑ§Ï°¼ÇÂ¼
+	//ï¿½Ã»ï¿½ï¿½ï¿½ï¿½ï¿½É¾ï¿½ï¿½Ä³ï¿½ï¿½Ñ§Ï°ï¿½ï¿½Â¼
 	@RequestMapping("/deleteitem")
 	public void deleteitem(HttpServletRequest request,HttpServletResponse response) throws IOException{
 		
 		
 	}
 	
-	//ÓÃ»§ÇëÇóÅÅÐÐ°ñÊý¾Ý
+	//ï¿½Ã»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ð°ï¿½ï¿½ï¿½ï¿½ï¿½
 	@RequestMapping("/getranklistdataP")
 	public void getranklistdataP(HttpServletRequest request,HttpServletResponse response) throws IOException{
 		
 		
 	}
 	
-	//ÓÃ»§ÇëÇóÐÞ¸ÄÃÜÂë
+	//ï¿½Ã»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Þ¸ï¿½ï¿½ï¿½ï¿½ï¿½
 	@RequestMapping("/changepsw")
 	public void changepsw(HttpServletRequest request,HttpServletResponse response) throws IOException{
 		
 		
 	}
 	
-	//ÓÃ»§ÇëÇó»ñÈ¡Èý¸öÅÅÐÐ°ñµÄÄÚÈÝ
+	//ï¿½Ã»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½È¡ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ð°ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 	@RequestMapping("/getthreerank")
 	public void getthreerank(HttpServletRequest request,HttpServletResponse response) throws IOException{
 		
 		
 	}
 	
-	//ÓÃ»§ÇëÇó¸üÐÂ°æ±¾ºÅ
+	//ï¿½Ã»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Â°æ±¾ï¿½ï¿½
 	@RequestMapping("/checkversion")
 	public void checkversion(HttpServletRequest request,HttpServletResponse response) throws IOException{
 		
 		
 	}
 	
-	//ÓÃ»§ÇëÇóÅÅÐÐ°ñÉÏÄ³¸ö´ó¸çµÄÐÅÏ¢
+	//ï¿½Ã»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ð°ï¿½ï¿½ï¿½Ä³ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ï¢
 	@RequestMapping("/getRankListUserInfo")
 	public void GetRankListUserInfo(HttpServletRequest request,HttpServletResponse response) throws IOException{
 		
 		
 	}
 	
-	//ÓÃ»§ÇëÇó×Ô¼ºµÄÑ«ÕÂ
+	//ï¿½Ã»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ô¼ï¿½ï¿½ï¿½Ñ«ï¿½ï¿½
 	@RequestMapping("/getUserSigns")
 	public void getUserSigns(HttpServletRequest request,HttpServletResponse response) throws IOException{
 		
 		
 	}
 	
-	//ÓÃ»§ÇëÇóÐÞ¸ÄÅå´÷µÄÑ«ÕÂ
+	//ï¿½Ã»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Þ¸ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ñ«ï¿½ï¿½
 	@RequestMapping("/changeUserSign")
 	public void changeUserSign(HttpServletRequest request,HttpServletResponse response) throws IOException{
 		
 		
 	}
 	
-	//ÓÃ»§ÇëÇó½¡¿µÖªÊ¶¼¼ÊõÕâÈý¸öÊý¾Ý
+	//ï¿½Ã»ï¿½ï¿½ï¿½ï¿½ó½¡¿ï¿½ÖªÊ¶ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 	@RequestMapping("/getThreePartDate")
 	public void getThreePartDate(HttpServletRequest request,HttpServletResponse response) throws IOException{
 		
 		
 	}
 	
-	//ÓÃ»§ÇëÇóÉèÖÃÐÅÏ¢
+	//ï¿½Ã»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ï¢
 	@RequestMapping("/requestSetting")
 	public void requestSetting(HttpServletRequest request,HttpServletResponse response) throws IOException{
 		
 		
 	}
 	
-	//ÓÃ»§ÇëÇóÉèÖÃÉèÖÃÐÅÏ¢
+	//ï¿½Ã»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ï¢
 	@RequestMapping("/setProperty")
 	public void setProperty(HttpServletRequest request,HttpServletResponse response) throws IOException{
 		
 		
 	}
 	
-	//ÓÃ»§ÇëÇóÈÙÓþÖ®µØµÄÊý¾Ý
+	//ï¿½Ã»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ö®ï¿½Øµï¿½ï¿½ï¿½ï¿½ï¿½
 	@RequestMapping("/getSendSignData")
 	public void getSendSignData(HttpServletRequest request,HttpServletResponse response) throws IOException{
 		
 		
 	}
 	
-	//ÓÃ»§ÇëÇóÔÂ¶È±¨¸æµÄÊý¾Ý
+	//ï¿½Ã»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Â¶È±ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 	@RequestMapping("/getMonthReport")
 	public void getMonthReport(HttpServletRequest request,HttpServletResponse response) throws IOException{
 		
 		
 	}
 	
-	//ÓÃ»§ÇëÇó²é¿´ÏêÏ¸ÔÂ¶È±¨¸æ
+	//ï¿½Ã»ï¿½ï¿½ï¿½ï¿½ï¿½é¿´ï¿½ï¿½Ï¸ï¿½Â¶È±ï¿½ï¿½ï¿½
 	@RequestMapping("/getAnalyseMonthData")
 	public void getAnalyseMonthData(HttpServletRequest request,HttpServletResponse response) throws IOException{
 		
@@ -295,35 +287,35 @@ public class Control{
 	}
 	
 	
-	//ÓÃ»§½øÈë×ÔÏ°ÊÒ
+	//ï¿½Ã»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ï°ï¿½ï¿½
 	@RequestMapping("/inClassRoom")
 	public void inClassRoom(HttpServletRequest request,HttpServletResponse response) throws IOException{
 		
 		
 	}
 	
-	//ÓÃ»§ÇëÇó×¢ÏúÕË»§
+	//ï¿½Ã»ï¿½ï¿½ï¿½ï¿½ï¿½×¢ï¿½ï¿½ï¿½Ë»ï¿½
 	@RequestMapping("/cancellation")
 	public void cancellation(HttpServletRequest request,HttpServletResponse response) throws IOException{
 		
 		
 	}
 	
-	//ÓÃ»§»ñÈ¡¹Ù·½»î¶¯ÁÐ±í
+	//ï¿½Ã»ï¿½ï¿½ï¿½È¡ï¿½Ù·ï¿½ï¿½î¶¯ï¿½Ð±ï¿½
 	@RequestMapping("/getOfficialtasks")
 	public void getOfficialtasks(HttpServletRequest request,HttpServletResponse response) throws IOException{
 		
 		
 	}
 	
-	//ÓÃ»§½ÓÊÜÈÎÎñ
+	//ï¿½Ã»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 	@RequestMapping("/acceptTask")
 	public void acceptTask(HttpServletRequest request,HttpServletResponse response) throws IOException{
 		
 		
 	}
 	
-	//ÓÃ»§ÁìÈ¡½±Àø
+	//ï¿½Ã»ï¿½ï¿½ï¿½È¡ï¿½ï¿½ï¿½ï¿½
 	@RequestMapping("/getReward")
 	public void getReward(HttpServletRequest request,HttpServletResponse response) throws IOException{
 		
