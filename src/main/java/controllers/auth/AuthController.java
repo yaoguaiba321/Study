@@ -12,12 +12,12 @@ import services.AuthService;
 //@RequestMapping("")
 public class AuthController {
 
-    @Autowired(required = false)
+    @Autowired
     protected AuthService authService;
 
     //��¼ģ�� //����Ҫ���ò���ͬʱ��¼��̨�豸���ǣ�Ҳ���Ǽ�¼һ���ֶΣ�
     @PostMapping("/login")
-    public User login(@Validated @RequestBody AuthRequest request) {
+    User login(@Validated @RequestBody AuthRequest request) {
         System.out.println("12345");
         return this.authService.login(request.getAccount(), request.getNickname());
     }

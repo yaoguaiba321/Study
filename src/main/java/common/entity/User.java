@@ -6,4 +6,9 @@ public class User {
     private String account;
     private String nickname;
 
+    public User(String account, String nickname) {
+        this.account = account;
+        this.nickname = nickname;
+    }
+
 }
