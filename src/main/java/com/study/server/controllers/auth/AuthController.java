@@ -1,5 +1,6 @@
 package com.study.server.controllers.auth;
 
+import com.study.server.common.BaseController;
 import com.study.server.entity.User;
 import com.study.server.services.AuthService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,17 +12,23 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping("")
-public class AuthController {
+public class AuthController extends BaseController {
 
     @Autowired
     protected AuthService authService;
 
-    //��¼ģ�� //����Ҫ���ò���ͬʱ��¼��̨�豸���ǣ�Ҳ���Ǽ�¼һ���ֶΣ�
+    //登录和注册
     @PostMapping("/login")
     AuthResponse login(@Validated @RequestBody AuthRequest request) {
-        System.out.println("12345");
         User user = this.authService.login(request.getAccount(), request.getNickname());
 
+        return this.makeResponse(user);
+    }
+
+    // 刷新
+    @PostMapping("/refresh")
+    public AuthResponse refresh(@Validated @RequestBody AuthResponse req) {
+        User user = this.authService.refreshUserByToken(req.getJwt());
         return this.makeResponse(user);
     }
 

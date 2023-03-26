@@ -4,3 +4,12 @@ spring:
 
 mybatis:
   mapperLocations: classpath:mapper/*.xml    # mapper映射文件位置
+
+#jwt
+jwt:
+  keystore:
+    location: keys/keystore.jks
+    password: studyserver
+    alias: study
+    passphrase: studyserver
+  issuer: study-user

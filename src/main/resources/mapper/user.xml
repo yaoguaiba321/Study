@@ -4,9 +4,17 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.study.server.dao.UserDao">
     <select id="selectUser" parameterType="java.lang.String" resultType="com.study.server.entity.User">
-        select * from users where account='${account}';
+        select *
+        from users
+        where account = '${account}';
+    </select>
+    <select id="findById" parameterType="java.lang.Long" resultType="com.study.server.entity.User">
+        select *
+        from users
+        where id = '${id}';
     </select>
     <insert id="insertUser" parameterType="com.study.server.entity.User">
-        insert into users (account, nickname) values (#{account}, #{nickname});
+        insert into users (account, nickname)
+        values (#{account}, #{nickname});
     </insert>
 </mapper>

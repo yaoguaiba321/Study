@@ -12,7 +12,9 @@ import com.study.server.properties.JwtProperties;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
+import javax.servlet.http.HttpServletRequest;
 import java.security.interfaces.RSAPrivateKey;
+import java.text.ParseException;
 import java.time.Instant;
 import java.util.Calendar;
 import java.util.Date;
@@ -31,7 +33,7 @@ public class JwtHelper {
     public String createJwtForClaims(String subject, Map<String, String> claims) {
         Calendar calendar = Calendar.getInstance();
         calendar.setTimeInMillis(Instant.now().toEpochMilli());
-        calendar.add(Calendar.DATE, 1);
+        calendar.add(Calendar.DATE, 30);
 
         JWTClaimsSet.Builder builder = new JWTClaimsSet.Builder()
                 .subject(subject)
@@ -48,5 +50,25 @@ public class JwtHelper {
         } catch (JOSEException e) {
             throw new StudyException("JWT生成失败");
         }
+    }
+
+    public boolean validateToken(String authToken) {
+        String idStr = null;
+        try {
+            SignedJWT jwt = SignedJWT.parse(authToken);
+            idStr = jwt.getJWTClaimsSet().getStringClaim("id");
+            return true;
+        } catch (ParseException e) {
+            throw new StudyException("令牌无效");
+        }
+        return false;
+    }
+
+    public String resolveToken(HttpServletRequest req) {
+        String bearerToken = req.getHeader("Authorization");
+        if (bearerToken != null && bearerToken.startsWith("Bearer ")) {
+            return bearerToken.substring(7);
+        }
+        return null;
     }
 }
