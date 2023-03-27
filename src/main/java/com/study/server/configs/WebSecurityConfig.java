@@ -1,7 +1,5 @@
 package com.study.server.configs;
 
-import com.study.server.filters.JwtTokenFilter;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
@@ -12,9 +10,6 @@ import org.springframework.stereotype.Component;
 
 @Component
 public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
-    @Autowired
-    private JwtTokenFilter jwtTokenFilter;
-
 
     @Override
     protected void configure(HttpSecurity http) throws Exception {

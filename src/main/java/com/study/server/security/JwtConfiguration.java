@@ -4,6 +4,8 @@ import com.study.server.properties.JwtProperties;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.security.oauth2.core.DelegatingOAuth2TokenValidator;
+import org.springframework.security.oauth2.jwt.*;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -12,6 +14,7 @@ import java.security.cert.Certificate;
 import java.security.cert.CertificateException;
 import java.security.interfaces.RSAPrivateKey;
 import java.security.interfaces.RSAPublicKey;
+import java.util.Objects;
 
 @Configuration
 public class JwtConfiguration {
@@ -62,15 +65,15 @@ public class JwtConfiguration {
         throw new IllegalArgumentException("Unable to load RSA public key");
     }
 
-//    @Bean
-//    public JwtDecoder jwtDecoder(RSAPublicKey rsaPublicKey) {
-//        NimbusJwtDecoder result = NimbusJwtDecoder.withPublicKey(rsaPublicKey).build();
-//        result.setJwtValidator(
-//                new DelegatingOAuth2TokenValidator<Jwt>(
-//                        JwtValidators.createDefaultWithIssuer(jwtProperties.getIssuer()),
-//                        new JwtClaimValidator<>("id", Objects::nonNull),
-//                        new JwtClaimValidator<>("organizationId", Objects::nonNull))
-//        );
-//        return result;
-//    }
+    @Bean
+    public JwtDecoder jwtDecoder(RSAPublicKey rsaPublicKey) {
+        NimbusJwtDecoder result = NimbusJwtDecoder.withPublicKey(rsaPublicKey).build();
+        result.setJwtValidator(
+                new DelegatingOAuth2TokenValidator<Jwt>(
+                        JwtValidators.createDefaultWithIssuer(jwtProperties.getIssuer()),
+                        new JwtClaimValidator<>("id", Objects::nonNull),
+                        new JwtClaimValidator<>("nickname", Objects::nonNull))
+        );
+        return result;
+    }
 }

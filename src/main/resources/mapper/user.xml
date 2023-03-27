@@ -17,4 +17,9 @@
         insert into users (account, nickname)
         values (#{account}, #{nickname});
     </insert>
+    <update id="updateUser" parameterType="com.study.server.entity.User">
+        UPDATE users
+        SET nickname = #{nickname}
+        WHERE id = #{id};
+    </update>
 </mapper>
