@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.study.server.dao.ItemDao">
+    <select id="selectItem" parameterType="java.lang.String" resultType="com.study.server.entity.Item">
+        select *
+        from items
+        where account = '${account}';
+    </select>
+    <select id="findById" parameterType="java.lang.Long" resultType="com.study.server.entity.Item">
+        select *
+        from items
+        where id = '${id}';
+    </select>
+    <select id="findAllByAccount" parameterType="java.lang.String" resultType="com.study.server.entity.Item">
+        select *
+        from items
+        where account = #{account};
+    </select>
+    <insert id="insertItem" parameterType="com.study.server.entity.Item">
+        insert into items (account, title)
+        values (#{account}, #{title});
+    </insert>
+    <update id="updateItem" parameterType="com.study.server.entity.Item">
+        UPDATE items
+        SET title = #{nickname}
+        WHERE id = #{id};
+    </update>
+</mapper>
