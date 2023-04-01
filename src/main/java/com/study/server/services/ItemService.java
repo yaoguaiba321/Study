@@ -33,4 +33,8 @@ public class ItemService {
         return itemMapper.toItemReses(this.itemDao.findAllByAccount(user.getAccount()));
     }
 
+    public ItemRes detail(Long itemId) {
+        return itemMapper.toItemRes(itemDao.findById(itemId));
+    }
+
 }
